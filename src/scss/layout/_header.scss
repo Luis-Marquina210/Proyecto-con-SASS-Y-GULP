@@ -1,0 +1,86 @@
+@use 'base/variables' as v;
+// se llama a la carpeta donde esta los mixins
+@use 'base/mixins' as m;
+
+.header{
+    background-color: v.$verde;
+
+    @include m.tablet {
+        &.fijo{
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem 2rem 3rem #333 ;
+        }           
+    }
+    //ANIDACION EN SASS
+    h1{
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+
+    .contenido-header{
+        padding: 2rem;
+        @include m.tablet{
+            display: flex;
+            justify-content:space-between ;
+            align-items: center;
+        }
+    }
+}
+
+.navegacion-principal{
+    //Llamamos al mixin(telefono) y creamos las caracteristicas correspondientes
+    /*@include m.telefono{
+        background-color: red;
+        text-transform: uppercase;
+        font-weight: bold;
+    }*/
+    // Prefijo para traer los mixin(mq), se encuentra en los snippets de scss
+
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }
+
+
+    a{
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        @include m.tablet {
+            margin: 0;
+        }
+
+        // Mixin con caracteristicas diferentes(sirve para dar funcionalidad al content del archivo de mixin)
+        /*@include m.telefono{
+            font-size: 8rem;
+            color: blue;
+        }*/
+
+        &:hover{// agrega el hover con el &(amperson)
+            color: v.$amarillo;
+        }
+    }
+}
+
+// para llamar al mixin dentro de una clase se utiliza el @include + namespace + nombre del mixin
+// Los mixins sirve mayormente para dar estilos a los hijos de un padre creado a eso se llamaria mayormente mixins
+
+// los mixins se pueden usar como funciones como el ejemplo prueba
+/*
+// Prueba para los mixins
+.prueba{
+    // directiva que ayuda para llamar a las funciones creadas en el archivo de mixins(@include)
+    @include m.heading(v.$amarillo, true);
+}
+
+.texto{
+    @include m.heading;
+}*/

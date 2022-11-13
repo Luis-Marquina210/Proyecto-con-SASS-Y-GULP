@@ -1,0 +1,21 @@
+instalacion para gulp y sass con sus dependencias de desarrollo
+
+npm i -D sass
+npm i -D gulp
+npm i --save-dev gulp-sass
+npm i --save-dev gulp-plumber
+
+//para las imagenes solamente
+
+npm i --save-dev gulp-webp
+npm i --save-dev gulp-imagemin@7.1.0
+npm i --save-dev gulp-cache
+npm i --save-dev gulp-avif
+
+// Instalamos un paquete para hacer la compresion y rapidez al css(al finalizar el proyecto)
+
+npm i --save-dev cssnano autoprefixer postcss gulp-postcss
+npm i --save-dev gulp-sourcemaps
+
+// Compresor para ESC6(javascript)
+npm i gulp-terser-js

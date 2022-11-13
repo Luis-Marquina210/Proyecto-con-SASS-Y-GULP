@@ -1,0 +1,22 @@
+// Importamos el url donde se encuentra la variable $rojo(metodo antiguo)
+
+//@import 'base/variables';
+
+// Importamos el url que traera el contenido
+
+//@import 'contenido/contenido';
+
+// el @import hace disponible en todos los archivos 
+
+
+
+// Nueva forma de llamado
+
+// En el @use lo hace disponible donde queremos que sea importado en los archivos
+
+@use 'base';
+@use 'layout';
+
+
+
+
